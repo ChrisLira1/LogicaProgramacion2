@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversión de Temperatura por Christian Lira</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    input, button { padding: 10px; font-size: 16px; margin: 10px; }
+    button { background-color: #0ef0c7; color: rgb(14, 18, 245); cursor: pointer; }
+   </style>
+</head>
+<body>
+  <h1>Conversión de Temperatura por Christian Lira</h1>
+  <input id="tempCelsius" type="text" placeholder="°C">
+  <button onclick="convertir()">Convertir a</button>
+  <p id="resultado"></p>
+  <script>
+    function convertir() {
+      let c = parseFloat(document.getElementById('tempCelsius').value);
+      if (isNaN(c)) return alert("Ingresa un número válido");
+      let f = (c * 9/5) + 32, k = c + 273.15;
+      document.getElementById('resultado').innerHTML = `Kelvin: ${k.toFixed(2)}<br>Fahrenheit: ${f.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
